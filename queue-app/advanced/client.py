@@ -13,25 +13,25 @@ class CmdInterpreter(Cmd):
     prompt = "" 
 
     def __init__(self, transport):
-        """Send a 'call' command with the given call ID."""
+
         super().__init__()
         self.transport = transport
 
     def do_call(self, arg):
         """Send a 'call' command with the given call ID."""
-        self.send_command("call", arg)
+        self.send("call", arg)
 
     def do_answer(self, arg):
         """Send an 'answer' command with the given operator ID."""
-        self.send_command("answer", arg)
+        self.send("answer", arg)
 
     def do_reject(self, arg):
         """Send a 'reject' command with the given operator ID."""
-        self.send_command("reject", arg)
+        self.send("reject", arg)
 
     def do_hangup(self, arg):
         """Send a 'hangup' command with the given call ID."""
-        self.send_command("hangup", arg)
+        self.send("hangup", arg)
 
     def do_exit(self, arg):
         """Exit the client application gracefully."""
